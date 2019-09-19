@@ -1,7 +1,10 @@
 
-<view>
-<image src="/image/guoqing.jpg"></image>
-<text>周看</text>
-<text>推荐好片</text>
-<text>weibo: weibo.com/simbassong</text>
+<view class="container">
+  <image class="about-banner" src="/image/guoqing.jpg"></image>
+  <text style="font-weight:bold; font-size:60rpx">周看</text>
+  <view>
+    <text>推荐</text><navigator hover-class="nav-hover" class="nav-default" style="display : inline;" open-type="switchTab" url="/pages/weekly/weekly">好片</navigator><text>!</text>
+  </view>
+  <text>weibo: weibo.com/simbassong</text>
+  <text>888</text>
 </view>
