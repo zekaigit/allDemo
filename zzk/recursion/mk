@@ -1,0 +1,57 @@
+
+
+#------------------------------------------------------------------------------
+.SUFFIXES:
+.SUFFIXES: .o .c
+.PHONY: clean all depend
+
+LDFLAGS =  -g
+CFLAGS = -Os -pipe
+DEPEND = ./.depend
+
+#------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+# EXTRA_CFLAGS
+#------------------------------------------------------------------------------
+EXTRA_CFLAGS =
+
+#------------------------------------------------------------------------------
+# CFLAGS
+#------------------------------------------------------------------------------
+DEBUG	= -g -Wall
+IFLAGS 	= -I. -I$(APMIB_DIR) -I$(JSONC_DIR) -I$(LIB_DIR)  -I$(UBUS_DIR) 
+CFLAGS += $(COMMON_CFLAGS) $(EXTRA_CFLAGS)
+CFLAGS += -DCONFIG_RTL_92D_SUPPORT
+
+SOURCES_SER = recursion.c cJSON.c 
+
+OBJS_SER = $(SOURCES_SER:.c=.o)
+#------------------------------------------------------------------------------
+# targets
+#------------------------------------------------------------------------------
+all: recursion
+
+
+recursion: Makefile $(OBJS_SER)
+	$(CC) -o $@  $(OBJS_SER) $(CFLAGS) $(LDFLAGS)    -lm
+	$(STRIP) $@
+
+
+clean:
+	rm -f $(DEPEND)
+	rm -f *.o recursion
+
+depend: $(SOURCES_SER) $(SOURCES_CLI)
+	if [ ! -e $(DEPEND) ]; then \
+		$(CPP) $(DEBUG) $(CFLAGS) $(IFLAGS) -MM $^ > $(DEPEND); \
+	fi
+	
+-include $(DEPEND)
+
+.c.o:
+	${CC} -c -o $@ $(DEBUG) $(CFLAGS) $(IFLAGS) $<
+
+romfs:
+	$(ROMFSINST) recursion /bin/recursion
+

@@ -1,0 +1,60 @@
+{
+	"device_name": "鏋佽仈wifi",
+	"ip_addr": "192.168.1.10",
+	"mac_address": "d05157b22e4b",
+	"neighbor_devices": [{
+			"neighbor_mac": "d05157b22e59",
+			"neighbor_name": "KS_MESH_B22E58",
+			"neighbor_rssi": "47",
+			"neighbor_band": "5G"
+		}, {
+			"neighbor_mac": "d05157b22e52",
+			"neighbor_name": "KS_MESH_B22E51",
+			"neighbor_rssi": "54",
+			"neighbor_band": "5G"
+		}
+	],
+	"station_info": [{
+			"station_mac": "9487e0073cc2",
+			"station_rssi": "47",
+			"station_connected_band": "5G",
+			"station_downlink": "780",
+			"station_uplink": "780"
+		}, {
+			"station_mac": "c49f4cae3166",
+			"station_rssi": "61",
+			"station_connected_band": "2G",
+			"station_downlink": "150",
+			"station_uplink": "6"
+		}
+	],
+	"child_devices": [{
+			"device_name": "KS_MESH_B22E58",
+			"ip_addr": "192.168.1.105",
+			"mac_address": "d05157b22e59",
+			"neighbor_devices": [],
+			"station_info": [],
+			"child_devices": []
+		}, {
+			"device_name": "KS_MESH_B22E51",
+			"ip_addr": "192.168.1.103",
+			"mac_address": "d05157b22e52",
+			"neighbor_devices": [],
+			"station_info": [{
+					"station_mac": "70ece4dd59b7",
+					"station_rssi": "63",
+					"station_connected_band": "5G",
+					"station_downlink": "292",
+					"station_uplink": "54"
+				}, {
+					"station_mac": "4c49e3bc9df4",
+					"station_rssi": "63",
+					"station_connected_band": "2G",
+					"station_downlink": "72",
+					"station_uplink": "6"
+				}
+			],
+			"child_devices": []
+		}
+	]
+}

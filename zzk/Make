@@ -1,0 +1,18 @@
+
+
+
+source:=struct.c 
+LIB_DIR=
+
+CC=gcc
+SOURCES_SER=struct.c func.c
+
+OBJS_SER=$(SOURCES_SER:.c=.o)
+
+
+
+all: struct
+
+struct: $(OBJS_SER)
+	$(CC) -o $@ $(OBJS_SER) $(CFLAGS) $(LDFLAGS) 
+	
