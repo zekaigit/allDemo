@@ -2,3 +2,5 @@
 *.lo
 *.so
 *.a
+*.out
+tags
